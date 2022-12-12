@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true" android:color="@color/black"
+        android:textStyle="bold" android:textSize="16dp"/>
+    <item android:state_focused="true" android:color="@color/black"
+        android:textStyle="bold" android:textSize="16dp"/>
+    <item android:state_pressed="true" android:color="@color/black"
+        android:textStyle="bold" android:textSize="16dp"/>
+    <item android:state_selected="false" android:color="@color/mapbox_blue" />
+    <item android:color="#171212" />
+
+
 
 </selector>
