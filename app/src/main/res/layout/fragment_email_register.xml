@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".fragments.EmailRegisterFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -11,7 +14,41 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/edit_text_bg"
+            android:padding="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/icon_user"/>
+
+            <EditText
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="24dp"
+                android:id="@+id/edtUsernameReg"
+                android:inputType="textEmailAddress"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="24dp"
             android:background="@drawable/edit_text_bg"
             android:padding="15dp"
             android:orientation="horizontal">
@@ -27,7 +64,8 @@
             <EditText
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="24dp"
-                android:id="@+id/edtEmail"
+                android:id="@+id/edtEmailReg"
+                android:inputType="textEmailAddress"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,7 +76,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/edit_text_bg"
             android:padding="15dp"
             android:orientation="horizontal">
@@ -55,7 +96,7 @@
                 android:password="true"
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="24dp"
-                android:id="@+id/edtPass"
+                android:id="@+id/edtPassReg"
                 android:hint="Password"
                 android:textSize="16sp"
                 android:layout_width="match_parent"
@@ -64,26 +105,9 @@
 
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
 
-            <TextView
 
-                android:id="@+id/click_forgot_pass"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#4A5391"
-                android:text="Forgot Password?"
-                android:layout_alignParentRight="true"
 
-                />
-
-        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,7 +116,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_signIn_email"
+                android:id="@+id/btn_signUp_email"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_margin="24dp"
@@ -100,7 +124,7 @@
                 android:background="@drawable/button_login_bg"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:text="Sign In"
+                android:text="Sign Up"
                 android:layout_gravity="center"/>
 
         </LinearLayout>
@@ -114,15 +138,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don't have an account?"
+                android:text="Already have an account?"
                 android:layout_marginRight="5dp"
                 android:layout_gravity="center"/>
 
             <TextView
-                android:id="@+id/click_signUpEmail"
+                android:id="@+id/click_signInEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign Up"
+                android:text="Sign In"
                 android:layout_marginLeft="5dp"
                 android:textStyle="bold"
                 android:textColor="#4A5391"/>

@@ -1,5 +1,6 @@
 package com.azissulaiman.eder.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.azissulaiman.eder.R;
+import com.azissulaiman.eder.RegisterActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +64,23 @@ public class PhoneLoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_phone_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_phone_login, container, false);
+        TextView clickSignUpPhone = view.findViewById(R.id.click_signUpPhone);
+        clickSignUpPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initToRegister();
+            }
+        });
+
+        return view;
+
     }
+
+    private void initToRegister() {
+        Intent intent = new Intent(getActivity(), RegisterActivity.class);
+        startActivity(intent);
+    }
+
+
 }

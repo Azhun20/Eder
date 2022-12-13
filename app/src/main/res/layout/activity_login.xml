@@ -7,95 +7,95 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="50dp"
-            android:orientation="vertical">
+        android:scrollbars="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginTop="26dp"
-                    android:paddingLeft="10dp"
-                    android:textColor="#8F79E8"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Welcome Back"
-                    android:textSize="24dp"
-                    android:textStyle="bold"/>
+                    android:paddingBottom="50dp"
+                    android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="30dp"
-                    android:src="@drawable/icondada" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
+                        <TextView
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginTop="26dp"
+                            android:paddingLeft="10dp"
+                            android:textColor="#8F79E8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Welcome Back"
+                            android:textSize="24dp"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/icondada" />
+
+
+                    </LinearLayout>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:textSize="14sp"
+                        android:layout_marginRight="24dp"
+                        android:text="We Happy to see you again. To use your account, you should sign in first."/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayoutLog"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        app:tabGravity="fill"
+                        android:elevation="3dp"
+                        android:background="@drawable/tab_rect"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="50dp"
+                        app:tabIndicatorHeight="0dp"
+                        app:tabMode="fixed"
+                        app:tabRippleColor="@null"
+                        app:tabSelectedTextColor="@color/black"
+                        app:tabTextColor="#171212"
+                        app:tabTextAppearance="@style/TabLayout"
+                        />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPagerLog"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+
+                </LinearLayout>
 
             </LinearLayout>
 
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="24dp"
-                android:textSize="14sp"
-                android:layout_marginRight="24dp"
-                android:text="We Happy to see you again. To use your account, you should sign in first."/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                app:tabGravity="fill"
-                android:elevation="3dp"
-                android:background="@drawable/tab_rect"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="50dp"
-                app:tabIndicatorHeight="0dp"
-                app:tabMode="fixed"
-                app:tabRippleColor="@null"
-                app:tabSelectedTextColor="@color/black"
-                app:tabTextColor="#171212"
-                app:tabTextAppearance="@style/TabLayout"
-                />
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPager"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
-
-        </LinearLayout>
-
-
-
-
-
-
-    </LinearLayout>
-
-
+    </ScrollView>
 
 </RelativeLayout>

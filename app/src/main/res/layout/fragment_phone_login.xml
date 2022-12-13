@@ -30,8 +30,9 @@
             <EditText
                 android:layout_marginLeft="0dp"
                 android:layout_marginRight="24dp"
-                android:id="@+id/edtPhone"
+                android:id="@+id/edtPhoneLogin"
                 android:textSize="16sp"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"/>

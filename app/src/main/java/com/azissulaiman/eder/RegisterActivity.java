@@ -17,7 +17,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.azissulaiman.eder.fragments.EmailLoginFragment;
+import com.azissulaiman.eder.fragments.EmailRegisterFragment;
 import com.azissulaiman.eder.fragments.PhoneLoginFragment;
+import com.azissulaiman.eder.fragments.PhoneRegisterFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -26,41 +28,40 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     ViewPager2 viewPager2;
-    TabLayout tabLayout;
-    LoginActivity activity;
+    TabLayout tabLayout2;
+    RegisterActivity activity;
     ViewPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        viewPager2 = findViewById(R.id.viewPagerLog);
-        tabLayout = findViewById(R.id.tabLayoutLog);
+        setContentView(R.layout.activity_register);
+        viewPager2 = findViewById(R.id.viewPagerReg);
+        tabLayout2 = findViewById(R.id.tabLayoutReg);
         activity = this;
-        initView();
 
+        initView();
     }
 
     private void initView() {
         adapter = new ViewPagerAdapter(activity.getSupportFragmentManager(),getLifecycle());
-        adapter.addFragment(new EmailLoginFragment(), "Email");
-        adapter.addFragment(new PhoneLoginFragment(), "Phone");
+        adapter.addFragment(new EmailRegisterFragment(), "Email");
+        adapter.addFragment(new PhoneRegisterFragment(), "Phone");
         viewPager2.setAdapter(adapter);
         viewPager2.setOffscreenPageLimit(1);
 
-        new TabLayoutMediator(tabLayout, viewPager2,
+        new TabLayoutMediator(tabLayout2, viewPager2,
                 (tab, position)-> {
                     tab.setText(adapter.mFragmentTitleList.get(position));
                 }).attach();
 
-        for (int i = 0; i<tabLayout.getTabCount(); i++){
+        for (int i = 0; i<tabLayout2.getTabCount(); i++){
             TextView textView = (TextView) LayoutInflater.from(activity).inflate(R.layout.custom_tab_login,null);
-            tabLayout.getTabAt(i).setCustomView(textView);
+            tabLayout2.getTabAt(i).setCustomView(textView);
         }
-        tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#171212"));
-        tabLayout.setTabTextColors(ColorStateList.valueOf(Color.parseColor("#2F4F4F")));
+
     }
 
     private class ViewPagerAdapter extends FragmentStateAdapter {

@@ -12,14 +12,13 @@ import android.widget.TextView;
 
 import com.azissulaiman.eder.LoginActivity;
 import com.azissulaiman.eder.R;
-import com.azissulaiman.eder.RegisterActivity;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link EmailLoginFragment#newInstance} factory method to
+ * Use the {@link PhoneRegisterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EmailLoginFragment extends Fragment {
+public class PhoneRegisterFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,7 +29,7 @@ public class EmailLoginFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public EmailLoginFragment() {
+    public PhoneRegisterFragment() {
         // Required empty public constructor
     }
 
@@ -40,11 +39,11 @@ public class EmailLoginFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment EmailLoginFragment.
+     * @return A new instance of fragment PhoneRegisterFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EmailLoginFragment newInstance(String param1, String param2) {
-        EmailLoginFragment fragment = new EmailLoginFragment();
+    public static PhoneRegisterFragment newInstance(String param1, String param2) {
+        PhoneRegisterFragment fragment = new PhoneRegisterFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,12 +64,12 @@ public class EmailLoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_email_login, container, false);
-        TextView clickSignUpEmail = view.findViewById(R.id.click_signUpEmail);
-        clickSignUpEmail.setOnClickListener(new View.OnClickListener() {
+        View view = inflater.inflate(R.layout.fragment_phone_register, container, false);
+        TextView clickSignInPhone = view.findViewById(R.id.click_signInPhone);
+        clickSignInPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), RegisterActivity.class);
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
             }
         });

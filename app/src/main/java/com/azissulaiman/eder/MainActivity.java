@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button btn1, btnQrCode, btnLogin;
+    Button btn1, btnQrCode, btnLogin, btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         btn1 = findViewById(R.id.btnmap);
         btnQrCode = findViewById(R.id.btnTakeQr);
         btnLogin = findViewById(R.id.btnLogin1);
+        btnRegister = findViewById(R.id.btnRegister);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
             }
         });
 
