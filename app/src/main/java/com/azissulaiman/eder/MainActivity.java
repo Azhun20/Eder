@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button btn1, btnQrCode, btnLogin, btnRegister;
+    Button btn1, btnQrCode, btnLogin, btnRegister, btnDashboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         btnQrCode = findViewById(R.id.btnTakeQr);
         btnLogin = findViewById(R.id.btnLogin1);
         btnRegister = findViewById(R.id.btnRegister);
+        btnDashboard = findViewById(R.id.btnDashboard);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+            }
+        });
+
+        btnDashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, DashboardActivity.class));
             }
         });
 
