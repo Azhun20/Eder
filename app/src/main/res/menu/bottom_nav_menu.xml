@@ -3,9 +3,9 @@
     <item
         android:id="@+id/explore"
         android:title="Explore"
-        android:icon="@drawable/compass_active"/>
+        android:icon="@drawable/compass"/>
     <item
         android:id="@+id/myBooks"
         android:title="My Books"
-        android:icon="@drawable/book_nonactive"/>
+        android:icon="@drawable/book"/>
 </menu>
