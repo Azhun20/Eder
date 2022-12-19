@@ -1,5 +1,7 @@
 package com.azissulaiman.eder;
 
+import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -15,6 +17,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.azissulaiman.eder.fragments.EmailLoginFragment;
 import com.azissulaiman.eder.fragments.PhoneLoginFragment;
@@ -85,6 +88,17 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public int getItemCount() {
             return mFragmentList.size();
+        }
+    }
+    long exitTime = 0;
+
+    @Override
+    public void onBackPressed(){
+        if ((System.currentTimeMillis() - exitTime) > 2000){
+            Toast.makeText(this,"Press Again To Exit", Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            finishAffinity();
         }
     }
 }
