@@ -30,11 +30,11 @@ public class ExploreFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView, recyclerViewNewest;
     private Adapter adapter;
     private ArrayList<Buku> bukuArrayList;
 
-    LinearLayoutManager HorizontalLayout;
+    LinearLayoutManager HorizontalLayout, HorizontalLayoutNewest;
 
     public ExploreFragment() {
         // Required empty public constructor
@@ -76,10 +76,9 @@ public class ExploreFragment extends Fragment {
         addData();
 
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerview);
+        recyclerViewNewest = (RecyclerView) v.findViewById(R.id.recyclerviewNewest);
 
         adapter = new Adapter(bukuArrayList);
-
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext());
 
         // Set Horizontal Layout Manager
         // for Recycler view
@@ -89,10 +88,17 @@ public class ExploreFragment extends Fragment {
                 LinearLayoutManager.HORIZONTAL,
                 false);
 
-//        recyclerView.setLayoutManager(layoutManager);
+        HorizontalLayoutNewest
+                = new LinearLayoutManager(
+                this.getContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false);
+
         recyclerView.setLayoutManager(HorizontalLayout);
+        recyclerViewNewest.setLayoutManager(HorizontalLayoutNewest);
 
         recyclerView.setAdapter(adapter);
+        recyclerViewNewest.setAdapter(adapter);
 
         return v;
     }
@@ -100,8 +106,8 @@ public class ExploreFragment extends Fragment {
     void addData() {
         bukuArrayList = new ArrayList<>();
         bukuArrayList.add(new Buku(R.drawable.superjitu_cover,"Superjitu Lolos Tes CPNS", "Tim B First", "4.3"));
-        bukuArrayList.add(new Buku(R.drawable.superjitu_cover,"Superjitu Lolos Tes CPNS", "Tim B First", "4.3"));
-        bukuArrayList.add(new Buku(R.drawable.superjitu_cover,"Superjitu Lolos Tes CPNS", "Tim B First", "4.3"));
-        bukuArrayList.add(new Buku(R.drawable.superjitu_cover,"Superjitu Lolos Tes CPNS", "Tim B First", "4.3"));
+        bukuArrayList.add(new Buku(R.drawable.cover_pai,"Pendidikan Agama Islam", "Dr. Mardani", "4.2"));
+        bukuArrayList.add(new Buku(R.drawable.cover_parasit,"Parasit Jatuh Cinta", "Khaira Salsabila", "4.5"));
+        bukuArrayList.add(new Buku(R.drawable.cover_anxiety,"Anxiety", "Wayne Reese", "4.8"));
     }
 }
