@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    card_view:cardBackgroundColor="#ffffff"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="0dp"
+    card_view:contentPadding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgCoverBuku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8sp"
+            android:src="@drawable/superjitu_cover" />
+
+        <TextView
+            android:id="@+id/txtJudul"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Superjitu Lolos Tes CPNS"
+            android:textColor="#BF000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtPenulis"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Tim B First"
+            android:textColor="#BF000000"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/txtRating"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="4.3"
+                android:textColor="#BF000000"
+                android:textSize="14sp"
+                android:layout_marginEnd="4sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/star" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
