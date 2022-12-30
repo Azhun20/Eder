@@ -1,5 +1,7 @@
 package com.azissulaiman.eder.fragments;
 
+import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.azissulaiman.eder.LoginActivity;
 import com.azissulaiman.eder.R;
@@ -64,17 +67,20 @@ public class EmailLoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_email_login, container, false);
         TextView clickSignUpEmail = view.findViewById(R.id.click_signUpEmail);
         clickSignUpEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), RegisterActivity.class);
+                Intent intent = new Intent(view.getContext(), RegisterActivity.class);
+                getActivity().finish();
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
-
         return view;
     }
+
 }

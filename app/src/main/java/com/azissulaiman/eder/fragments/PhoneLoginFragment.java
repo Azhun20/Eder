@@ -76,11 +76,8 @@ public class PhoneLoginFragment extends Fragment {
         return view;
 
     }
-
     private void initToRegister() {
         Intent intent = new Intent(getActivity(), RegisterActivity.class);
         startActivity(intent);
     }
-
-
 }

@@ -75,9 +75,6 @@ public class EmailRegisterFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-
         return view;
-
     }
 }
