@@ -62,33 +62,181 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tabLayoutReg"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="65dp"
-                    app:tabGravity="fill"
-                    android:elevation="3dp"
-                    android:background="@drawable/tab_rect"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:padding="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/icon_user"/>
+
+                    <EditText
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="24dp"
+                        android:id="@+id/edtUsernameReg"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Full Name"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:padding="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/mail"/>
+
+                    <EditText
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="24dp"
+                        android:id="@+id/edtEmailReg"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:padding="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/smartphone"/>
+
+                    <EditText
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="24dp"
+                        android:id="@+id/edtPhoneReg"
+                        android:textSize="16sp"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="50dp"
-                    app:tabIndicatorHeight="0dp"
-                    app:tabMode="fixed"
-                    app:tabRippleColor="@null"
-                    app:tabSelectedTextColor="@color/black"
-                    app:tabTextColor="#171212"
-                    app:tabTextAppearance="@style/TabLayout"
-                    />
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:padding="15dp"
+                    android:orientation="horizontal">
 
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewPagerReg"
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/lock"/>
+
+                    <EditText
+                        android:password="true"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="24dp"
+                        android:id="@+id/edtPassReg"
+                        android:hint="Password"
+                        android:textSize="16sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
 
+                    <Button
+                        android:id="@+id/btn_signUp_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_margin="24dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_login_bg"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:text="Sign Up"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Already have an account?"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/click_signInEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sign In"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#4A5391"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
