@@ -19,6 +19,7 @@
         <item name="textAllCaps">false</item>
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="Theme.Eder.Fullscreen" parent="Theme.Eder">
         <item name="android:actionBarStyle">@style/Widget.Theme.Eder.ActionBar.Fullscreen</item>
         <item name="android:windowActionBarOverlay">true</item>
@@ -29,4 +30,13 @@
         <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
         <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>
+
+    <style name="Theme.Eder.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Eder.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Eder.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

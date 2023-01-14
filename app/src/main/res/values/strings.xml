@@ -21,4 +21,11 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_reward">RewardActivity</string>
+    <string name="tab_text_1">Daily task</string>
+    <string name="tab_text_2">Redeem</string>
+    <string name="tab_text_3">History</string>
+    <string name="dailyLogin">Daily login</string>
+    <string name="read5Mnt">Read 5 minutes for the first time</string>
+    <string name="dailyRead">Daily reading</string>
 </resources>
