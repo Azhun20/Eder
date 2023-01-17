@@ -1,28 +1,271 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    app:layoutDescription="@xml/activity_map_scene"
     tools:context=".Map">
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/frm1"
+        app:layout_constraintTop_toTopOf="parent"
         mapbox:mapbox_cameraZoom="15" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/back_to_camera_tracking_mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@drawable/mylocation"
-        />
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/frm1"
+        app:srcCompat="@drawable/mylocation" />
+    <LinearLayout
+        android:id="@+id/frm1"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The nearest libraries"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/borderdetail"
+            android:layout_height="wrap_content">
 
-</FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:text="Perpus UM"
+                android:textStyle="normal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:text="Jl. Semarang no 6 UM Malang, Kota Malang"
+                android:textStyle="normal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:text="260 m from you"
+                android:textStyle="normal"
+                android:textColor="@color/black_overlay"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:text="In stock"
+                android:textStyle="normal"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Read in app"
+                    android:backgroundTint="@color/white"
+                    android:outlineSpotShadowColor="@color/purple_500"
+                    android:textColor="@color/purple_500"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Take home"
+                    android:outlineAmbientShadowColor="@color/purple_500"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/purple_500"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/borderdetail"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:text="Perpus Dieng"
+                android:textStyle="normal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:text="Jl. Besar Dieng no 1A , Kota Malang"
+                android:textStyle="normal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:text="280 m from you"
+                android:textStyle="normal"
+                android:textColor="@color/black_overlay"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:text="In stock"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Read in app"
+                    android:backgroundTint="@color/white"
+                   android:outlineSpotShadowColor="@color/purple_500"
+                    android:textColor="@color/purple_500"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Take home"
+                    android:outlineAmbientShadowColor="@color/purple_500"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/purple_500"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/borderdetail"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:text="Perpus Kota"
+                android:textStyle="normal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/black"
+                android:text="Jl. Besar Ijen No.30A, Oro-oro dowo, Kota Malang"
+                android:textStyle="normal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:text="300 m from you"
+                android:textStyle="normal"
+                android:textColor="@color/black_overlay"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginStart="10dp"
+                android:text="Out of stock"
+                android:textColor="@color/red"
+                android:textStyle="normal"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Read in app"
+                    android:backgroundTint="@color/white"
+                    android:outlineSpotShadowColor="@color/purple_500"
+                    android:textColor="@color/purple_500"
+                    />
+                <Button
+                    android:enabled="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Take home"
+                    android:outlineAmbientShadowColor="@color/purple_500"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/black_overlay"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

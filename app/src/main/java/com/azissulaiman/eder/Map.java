@@ -3,14 +3,22 @@ package com.azissulaiman.eder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.IconFactory;
+import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
@@ -23,6 +31,8 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.plugins.markerview.MarkerView;
+import com.mapbox.mapboxsdk.plugins.markerview.MarkerViewManager;
 
 import java.util.List;
 
@@ -34,6 +44,7 @@ public class Map extends AppCompatActivity implements
     private MapboxMap mapboxMap;
     private LocationComponent locationComponent;
     private boolean isInTrackingMode;
+
 //    private GeoJsonSource source;
 //    private static final String GEOJSON_SOURCE_ID = "GEOJSON_SOURCE_ID";
 //    private static final String MARKER_IMAGE_ID = "MARKER_IMAGE_ID";
@@ -52,6 +63,7 @@ public class Map extends AppCompatActivity implements
     @Override
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
+
         mapboxMap.addOnMapClickListener(new MapboxMap.OnMapClickListener() {
             @Override
             public boolean onMapClick(@NonNull LatLng point) {
@@ -59,14 +71,42 @@ public class Map extends AppCompatActivity implements
                 return true;
             }
         });
-
         mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
                 enableLocationComponent(style);
             }
         });
+        addMarkers();
     }
+    private void addMarkers() {
+        MarkerViewManager markerViewManager = new MarkerViewManager(mapView, mapboxMap);
+        View customView = LayoutInflater.from(Map.this).inflate(
+                R.layout.mapviewicon, null);
+        TextView titleTextView = customView.findViewById(R.id.marker_window_title);
+        titleTextView.setText("Perpus UM");
+        ImageView img1 = customView.findViewById(R.id.img1);
+        img1.setImageResource(R.drawable.locationon);
+        TextView snippetTextView = customView.findViewById(R.id.marker_window_snippet);
+        snippetTextView.setText("260 m");
+        customView.setLayoutParams(new FrameLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT));
+        MarkerView marker1 = new MarkerView(new LatLng(-7.961940644994314, 112.61656210416004), customView);
+        markerViewManager.addMarker(marker1);
+
+        View customView2 = LayoutInflater.from(Map.this).inflate(
+                R.layout.mapviewicon, null);
+        TextView titleTextView2 = customView2.findViewById(R.id.marker_window_title);
+        titleTextView2.setText("Perpus Kota");
+        ImageView img2 = customView2.findViewById(R.id.img1);
+        img2.setImageResource(R.drawable.book);
+        TextView snippetTextView2 = customView2.findViewById(R.id.marker_window_snippet);
+        snippetTextView2.setText("300 m");
+        customView2.setLayoutParams(new FrameLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT));
+        MarkerView marker2 = new MarkerView(new LatLng(-7.972050276205999, 112.622064932996159), customView2);
+        markerViewManager.addMarker(marker2);
+
+    }
+
     @SuppressWarnings( {"MissingPermission"})
     private void enableLocationComponent(@NonNull Style loadedMapStyle) {
         if (PermissionsManager.areLocationPermissionsGranted(this)) {
@@ -109,6 +149,7 @@ public class Map extends AppCompatActivity implements
             permissionsManager = new PermissionsManager(this);
             permissionsManager.requestLocationPermissions(this);
         }
+
     }
 
     @SuppressWarnings( {"MissingPermission"})
