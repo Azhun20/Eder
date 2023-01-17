@@ -15,6 +15,7 @@ import android.view.View;
 
 import com.azissulaiman.eder.ui.main.SectionsPagerAdapter;
 import com.azissulaiman.eder.databinding.ActivityRewardBinding;
+import com.kofigyan.stateprogressbar.StateProgressBar;
 
 public class RewardActivity extends AppCompatActivity {
 

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.kofigyan.stateprogressbar.StateProgressBar;
 
 import com.azissulaiman.eder.R;
 
@@ -21,6 +22,7 @@ public class DailyFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    String[] descriptionData = {"5 minutes", "10 minutes", "30 minutes", "60 minutes"};
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -55,6 +57,8 @@ public class DailyFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+//        StateProgressBar sPB = (StateProgressBar) f
     }
 
     @Override

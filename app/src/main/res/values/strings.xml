@@ -28,4 +28,7 @@
     <string name="dailyLogin">Daily login</string>
     <string name="read5Mnt">Read 5 minutes for the first time</string>
     <string name="dailyRead">Daily reading</string>
+    <string name="bookRedeem1">Gramedia</string>
+    <string name="bookRedeem2">STIKI Malang</string>
+    <string name="bookRedeem3">Kemendikbud</string>
 </resources>
