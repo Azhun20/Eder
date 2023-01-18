@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Eder" >
         <activity
+            android:name=".NewDashboardActivity"
+            android:exported="false"
+            android:label="@string/title_activity_new_dashboard"
+            android:theme="@style/Theme.Eder.NoActionBar" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SplashScreen"
             android:exported="true" >
             <intent-filter>
@@ -19,6 +28,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

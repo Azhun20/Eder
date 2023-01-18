@@ -8,4 +8,12 @@
         android:id="@+id/myBooks"
         android:title="My Books"
         android:icon="@drawable/book"/>
+    <item
+        android:id="@+id/ticket"
+        android:title="Ticket"
+        android:icon="@drawable/qrcode"/>
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/profile"/>
 </menu>
