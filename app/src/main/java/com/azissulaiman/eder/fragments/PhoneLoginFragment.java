@@ -5,13 +5,18 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.azissulaiman.eder.R;
 import com.azissulaiman.eder.RegisterActivity;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,16 +71,30 @@ public class PhoneLoginFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_phone_login, container, false);
         TextView clickSignUpPhone = view.findViewById(R.id.click_signUpPhone);
+        TextView btnkSignInPhone = view.findViewById(R.id.btn_signIn_phone);
+        EditText edtPhoneLogin = view.findViewById(R.id.edtPhoneLogin);
+
         clickSignUpPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 initToRegister();
             }
         });
+        
+        btnkSignInPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
+        
 
         return view;
 
     }
+
+
     private void initToRegister() {
         Intent intent = new Intent(getActivity(), RegisterActivity.class);
         startActivity(intent);
