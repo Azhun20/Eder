@@ -39,6 +39,14 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
             case R.id.myBooks:
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, myBooksFragment).commit();
                 return true;
+
+            case R.id.ticket:
+                // tambahkan kodingan pindah fragment disini
+                return true;
+
+            case R.id.profile:
+                // tambahkan kodingan pindah fragment disini
+                return true;
         }
         return false;
     }
@@ -52,11 +60,11 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.search) {
-            Toast.makeText(this, "Ini search", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.align_justify) {
-            Toast.makeText(this, "Ini sidebar", Toast.LENGTH_SHORT).show();
-        }
+//        if (id == R.id.search) {
+//            Toast.makeText(this, "Ini search", Toast.LENGTH_SHORT).show();
+//        } else if (id == R.id.align_justify) {
+//            Toast.makeText(this, "Ini sidebar", Toast.LENGTH_SHORT).show();
+//        }
         return super.onOptionsItemSelected(item);
     }
 }
