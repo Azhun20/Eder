@@ -3,6 +3,7 @@ package com.azissulaiman.eder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -41,6 +42,14 @@ public class ViewProfileActivity extends AppCompatActivity {
 
         authProfile = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfile.getCurrentUser();
+
+        btnBackProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ViewProfileActivity.this, ProfileActivity.class));
+                finish();
+            }
+        });
 
         if (firebaseUser == null){
             Toast.makeText(ViewProfileActivity.this,"Something Wrong!",Toast.LENGTH_SHORT).show();

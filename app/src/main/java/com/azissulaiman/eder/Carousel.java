@@ -82,7 +82,7 @@ public class Carousel extends AppCompatActivity {
         btnstart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Carousel.this, MainActivity.class));
+                startActivity(new Intent(Carousel.this, LoginActivity.class));
             }
         });
 
