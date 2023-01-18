@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "634868819544",
+    "firebase_url": "https://ederlibrary-default-rtdb.firebaseio.com",
     "project_id": "ederlibrary",
     "storage_bucket": "ederlibrary.appspot.com"
   },
