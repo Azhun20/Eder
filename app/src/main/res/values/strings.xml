@@ -31,4 +31,5 @@
     <string name="bookRedeem1">Gramedia</string>
     <string name="bookRedeem2">STIKI Malang</string>
     <string name="bookRedeem3">Kemendikbud</string>
+    <string name="txttemplate">Lorem ipsum dolor sit amet</string>
 </resources>
