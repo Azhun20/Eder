@@ -90,7 +90,7 @@ public class Map extends AppCompatActivity implements
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int day) {
                                 // Do something with the date chosen by the user
-                                startActivity(new Intent(Map.this, coba.class));
+                                startActivity(new Intent(Map.this, Achivment1.class));
                             }
                         }, year, month, day);
                 datePickerDialog.setButton(DatePickerDialog.BUTTON_POSITIVE, "Book now", datePickerDialog);
@@ -116,7 +116,7 @@ public class Map extends AppCompatActivity implements
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int day) {
                                 // Do something with the date chosen by the user
-                                startActivity(new Intent(Map.this, coba.class));
+                                startActivity(new Intent(Map.this, Achivment1.class));
                             }
                         }, year, month, day);
                 datePickerDialog.setButton(DatePickerDialog.BUTTON_POSITIVE, "Book now", datePickerDialog);
@@ -127,25 +127,25 @@ public class Map extends AppCompatActivity implements
         btnread1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Map.this, coba.class));
+                startActivity(new Intent(Map.this, Achivment2.class));
             }
         });
         btnread2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Map.this, coba.class));
+                startActivity(new Intent(Map.this, Achivment2.class));
             }
         });
         btnread3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Map.this, coba.class));
+                startActivity(new Intent(Map.this, Achivment2.class));
             }
         });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Map.this, coba.class));
+                startActivity(new Intent(Map.this, DashboardActivity.class));
             }
         });
 

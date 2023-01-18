@@ -12,7 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Eder">
         <activity
-            android:name=".coba"
+            android:name=".Achivment2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Achivment1"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -78,7 +85,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
