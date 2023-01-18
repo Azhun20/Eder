@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button btn1, btnQrCode, btnLogin, btnRegister, btnDashboard, btnboard;
+    Button btn1, btnQrCode, btnLogin, btnRegister, btnDashboard, btnboard,btncoba;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
