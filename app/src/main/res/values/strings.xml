@@ -21,6 +21,17 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_reward">RewardActivity</string>
+    <string name="tab_text_1">Daily task</string>
+    <string name="tab_text_2">Redeem</string>
+    <string name="tab_text_3">History</string>
+    <string name="dailyLogin">Daily login</string>
+    <string name="read5Mnt">Read 5 minutes for the first time</string>
+    <string name="dailyRead">Daily reading</string>
+    <string name="bookRedeem1">Gramedia</string>
+    <string name="bookRedeem2">STIKI Malang</string>
+    <string name="bookRedeem3">Kemendikbud</string>
+    <string name="txttemplate">Lorem ipsum dolor sit amet</string>
     <string name="title_activity_new_dashboard">NewDashboardActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -28,7 +39,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

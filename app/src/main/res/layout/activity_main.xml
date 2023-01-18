@@ -42,10 +42,15 @@
         android:text="Dashboard"/>
 
     <Button
+        android:id="@+id/btnReward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reward"/>
+        
+    <Button
         android:id="@+id/btnProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Profile"/>
-
 
 </LinearLayout>

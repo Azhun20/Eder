@@ -11,6 +11,16 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Eder">
+
+        <activity
+            android:name=".RewardActivity"
+            android:exported="false"
+            android:label="@string/title_activity_reward"
+            android:theme="@style/Theme.Eder.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
          <activity
             android:name=".TiketBarcodeActivity"
             android:exported="false">

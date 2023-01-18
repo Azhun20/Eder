@@ -2,6 +2,8 @@ package com.azissulaiman.eder;
 
 import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -67,6 +69,12 @@ public class ExploreFragment extends Fragment {
         }
     }
 
+//    @Override
+    public void onClick(View v, int position) {
+        Intent i = new Intent(v.getContext(), Map.class);
+        startActivity(i);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -74,7 +82,6 @@ public class ExploreFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_explore, container, false);
 
         addData();
-
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerview);
         recyclerViewNewest = (RecyclerView) v.findViewById(R.id.recyclerviewNewest);
 
@@ -99,7 +106,7 @@ public class ExploreFragment extends Fragment {
 
         recyclerView.setAdapter(adapter);
         recyclerViewNewest.setAdapter(adapter);
-
+        adapter.setClickListener(this);
         return v;
     }
 
@@ -110,4 +117,7 @@ public class ExploreFragment extends Fragment {
         bukuArrayList.add(new Buku(R.drawable.cover_parasit,"Parasit Jatuh Cinta", "Khaira Salsabila", "4.5"));
         bukuArrayList.add(new Buku(R.drawable.cover_anxiety,"Anxiety", "Wayne Reese", "4.8"));
     }
+
+
+
 }
