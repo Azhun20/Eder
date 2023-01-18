@@ -3,6 +3,7 @@ package com.azissulaiman.eder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,7 +38,7 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
                 return true;
 
             case R.id.myBooks:
-                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, myBooksFragment).commit();
+                startActivity(new Intent(DashboardActivity.this, Map.class));
                 return true;
 
             case R.id.ticket:
@@ -46,6 +47,8 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
 
             case R.id.profile:
                 // tambahkan kodingan pindah fragment disini
+                Intent intent = new Intent(DashboardActivity.this, ProfileActivity.class);
+                startActivity(intent);
                 return true;
         }
         return false;

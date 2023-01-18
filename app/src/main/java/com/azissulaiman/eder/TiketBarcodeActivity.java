@@ -3,10 +3,12 @@ package com.azissulaiman.eder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -29,6 +31,7 @@ public class TiketBarcodeActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     FirebaseAuth authProfileGetTiket;
     ImageView imgTiketCode;
+    ImageButton backProfile;
     Bitmap bitmap;
     private static final String TAG = "TiketBarcodeActivity";
 
@@ -43,6 +46,16 @@ public class TiketBarcodeActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.txtEmailTiket);
         progressBar = findViewById(R.id.progressBar2);
         imgTiketCode = findViewById(R.id.imgTiketQrCode);
+        backProfile = findViewById(R.id.backProfileBtn);
+
+        backProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TiketBarcodeActivity.this, ProfileActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         authProfileGetTiket = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfileGetTiket.getCurrentUser();
