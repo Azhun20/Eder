@@ -3,11 +3,17 @@ package com.azissulaiman.eder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -34,6 +40,7 @@ import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.plugins.markerview.MarkerView;
 import com.mapbox.mapboxsdk.plugins.markerview.MarkerViewManager;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class Map extends AppCompatActivity implements
@@ -44,6 +51,10 @@ public class Map extends AppCompatActivity implements
     private MapboxMap mapboxMap;
     private LocationComponent locationComponent;
     private boolean isInTrackingMode;
+    Calendar c = Calendar.getInstance();
+    int year = c.get(Calendar.YEAR);
+    int month = c.get(Calendar.MONTH);
+    int day = c.get(Calendar.DAY_OF_MONTH);
 
 //    private GeoJsonSource source;
 //    private static final String GEOJSON_SOURCE_ID = "GEOJSON_SOURCE_ID";
@@ -55,6 +66,7 @@ public class Map extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, getString(R.string.token));
         setContentView(R.layout.activity_map);
+        getSupportActionBar().hide();
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
@@ -63,14 +75,87 @@ public class Map extends AppCompatActivity implements
     @Override
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
-
-        mapboxMap.addOnMapClickListener(new MapboxMap.OnMapClickListener() {
+        Button btnhome1 = findViewById(R.id.btnhome1);
+        Button btnhome2 = findViewById(R.id.btnhome2);
+        Button btnhome3 = findViewById(R.id.btnhome3);
+        Button btnread1 = findViewById(R.id.btnread1);
+        Button btnread2 = findViewById(R.id.btnread2);
+        Button btnread3 = findViewById(R.id.btnread3);
+        Button back = findViewById(R.id.txback);
+        btnhome1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onMapClick(@NonNull LatLng point) {
-                Toast.makeText(Map.this, String.format("User clicked at: %s", point.toString()), Toast.LENGTH_LONG).show();
-                return true;
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(Map.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int day) {
+                                // Do something with the date chosen by the user
+                                startActivity(new Intent(Map.this, coba.class));
+                            }
+                        }, year, month, day);
+                datePickerDialog.setButton(DatePickerDialog.BUTTON_POSITIVE, "Book now", datePickerDialog);
+                datePickerDialog.setButton(DatePickerDialog.BUTTON_NEGATIVE, "Cancel", datePickerDialog);
+//                Button positiveButton = datePickerDialog.getButton(DatePickerDialog.BUTTON_POSITIVE);
+//                positiveButton.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        startActivity(new Intent(Map.this, coba.class));
+//                    }
+//                });
+//                positiveButton.setBackgroundColor(getResources().getColor(R.color.purple_500));
+//                positiveButton.setBackgroundColor(Color.MAGENTA);
+//                positiveButton.setTextColor(Color.WHITE);
+                datePickerDialog.show();
             }
         });
+        btnhome2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(Map.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int day) {
+                                // Do something with the date chosen by the user
+                                startActivity(new Intent(Map.this, coba.class));
+                            }
+                        }, year, month, day);
+                datePickerDialog.setButton(DatePickerDialog.BUTTON_POSITIVE, "Book now", datePickerDialog);
+                datePickerDialog.setButton(DatePickerDialog.BUTTON_NEGATIVE, "Cancel", datePickerDialog);
+                datePickerDialog.show();
+            }
+        });
+        btnread1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Map.this, coba.class));
+            }
+        });
+        btnread2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Map.this, coba.class));
+            }
+        });
+        btnread3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Map.this, coba.class));
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Map.this, coba.class));
+            }
+        });
+
+//        mapboxMap.addOnMapClickListener(new MapboxMap.OnMapClickListener() {
+//            @Override
+//            public boolean onMapClick(@NonNull LatLng point) {
+//                Toast.makeText(Map.this, String.format("User clicked at: %s", point.toString()), Toast.LENGTH_LONG).show();
+//                return true;
+//            }
+//        });
         mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
@@ -86,7 +171,7 @@ public class Map extends AppCompatActivity implements
         TextView titleTextView = customView.findViewById(R.id.marker_window_title);
         titleTextView.setText("Perpus UM");
         ImageView img1 = customView.findViewById(R.id.img1);
-        img1.setImageResource(R.drawable.locationon);
+        img1.setImageResource(R.drawable.book);
         TextView snippetTextView = customView.findViewById(R.id.marker_window_snippet);
         snippetTextView.setText("260 m");
         customView.setLayoutParams(new FrameLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT));
@@ -104,6 +189,18 @@ public class Map extends AppCompatActivity implements
         customView2.setLayoutParams(new FrameLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT));
         MarkerView marker2 = new MarkerView(new LatLng(-7.972050276205999, 112.622064932996159), customView2);
         markerViewManager.addMarker(marker2);
+
+        View customView3 = LayoutInflater.from(Map.this).inflate(
+                R.layout.mapviewicon, null);
+        TextView titleTextView3 = customView3.findViewById(R.id.marker_window_title);
+        titleTextView3.setText("Perpus Dieng");
+        ImageView img3 = customView3.findViewById(R.id.img1);
+        img3.setImageResource(R.drawable.book);
+        TextView snippetTextView3 = customView3.findViewById(R.id.marker_window_snippet);
+        snippetTextView3.setText("280 m");
+        customView3.setLayoutParams(new FrameLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT));
+        MarkerView marker3 = new MarkerView(new LatLng(-7.972760608814014, 112.61273907623124), customView3);
+        markerViewManager.addMarker(marker3);
 
     }
 

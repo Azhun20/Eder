@@ -16,6 +16,18 @@
         app:layout_constraintBottom_toTopOf="@+id/frm1"
         app:layout_constraintTop_toTopOf="parent"
         mapbox:mapbox_cameraZoom="15" />
+    <Button
+        android:id="@+id/txback"
+        android:layout_width="12dp"
+        android:layout_height="15dp"
+        android:backgroundTint="@color/purple_500"
+        android:background="@drawable/icn_back"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/back_to_camera_tracking_mode"
@@ -99,6 +111,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
+                    android:id="@+id/btnread1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Read in app"
@@ -107,6 +120,7 @@
                     android:textColor="@color/purple_500"
                     />
                 <Button
+                    android:id="@+id/btnhome1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Take home"
@@ -172,6 +186,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
+                    android:id="@+id/btnread2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Read in app"
@@ -180,6 +195,7 @@
                     android:textColor="@color/purple_500"
                     />
                 <Button
+                    android:id="@+id/btnhome2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Take home"
@@ -245,6 +261,7 @@
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
+                    android:id="@+id/btnread3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Read in app"
@@ -253,6 +270,7 @@
                     android:textColor="@color/purple_500"
                     />
                 <Button
+                    android:id="@+id/btnhome3"
                     android:enabled="false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
