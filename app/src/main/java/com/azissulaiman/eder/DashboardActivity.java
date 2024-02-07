@@ -43,6 +43,7 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
 
             case R.id.ticket:
                 // tambahkan kodingan pindah fragment disini
+                startActivity(new Intent(DashboardActivity.this, RewardActivity.class));
                 return true;
 
             case R.id.profile:

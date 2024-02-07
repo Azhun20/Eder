@@ -67,7 +67,7 @@ public class TiketBarcodeActivity extends AppCompatActivity {
             showTiketProfile(firebaseUser);
         }
 
-        QRGEncoder qrgEncoder = new QRGEncoder(null, bundle, QRGContents.Type.CONTACT, 500);
+        QRGEncoder qrgEncoder = new QRGEncoder(null, bundle, QRGContents.Type.CONTACT, 100);
         try {
             // Getting QR-Code as Bitmap
             bitmap = qrgEncoder.getBitmap();
